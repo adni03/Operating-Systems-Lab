@@ -1,0 +1,17 @@
+%{
+        #include<stdio.h>
+        int len=0;
+%}
+
+%%
+[a-zA-z]        {len=len+yyleng;}
+"\n" {printf("String length is : %d \n",len);}
+%%
+
+int main()
+{
+        printf("Enter string : ");
+        yylex();
+        return 0;
+}
+

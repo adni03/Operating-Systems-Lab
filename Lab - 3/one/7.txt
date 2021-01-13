@@ -1,0 +1,21 @@
+%{
+        #include<stdlib.h>
+        int small=0, cap=0, spl=0;
+%}
+
+%%
+[a-z]   {small++;}
+[A-Z]   {cap++;}
+[^a-zA-Z] {spl++;}
+%%
+
+int main()
+{
+        printf("\nEnter sentence : ");
+        yylex();
+        printf("\nSmall letters : %d",small);
+        printf("\nCapital letters : %d",cap);
+        printf("\nSpecial characters : %d",spl);
+        return 0;
+}
+

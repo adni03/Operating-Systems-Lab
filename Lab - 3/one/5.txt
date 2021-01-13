@@ -1,0 +1,19 @@
+%{
+        #include<stdlib.h>
+        int flag=0;
+%}
+
+%%
+[^a-zA-Z] {flag=1;}
+.       ;
+%%
+
+int main()
+{
+        printf("\nEnter sentence : ");
+        yylex();
+        if(flag) printf("\nNon-alphabetical character found!");
+        return 0;
+}
+
+

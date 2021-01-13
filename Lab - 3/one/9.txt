@@ -1,0 +1,19 @@
+%{
+        #include<stdlib.h>
+%}
+
+%%
+[a-zA-Z]        {
+                        if((int)*yytext+3<=90 ||(int)*yytext+3<=122) printf("%c",(char)*yytext+3);
+                        else printf("%c",(char)*yytext-65);
+                }
+.       ;
+%%
+
+int main()
+{
+        printf("\nEnter string : ");
+        yylex();
+        return 0;
+}
+

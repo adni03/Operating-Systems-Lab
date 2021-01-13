@@ -1,0 +1,19 @@
+%{
+        #include<stdio.h>
+        int vc=0;
+        int cc=0;
+%}
+
+%%
+[aeiouAEIOU]    {vc++;}
+[a-zA-Z]        {cc++;}
+"\n"    {printf("No. of vowels : %d \n",vc); printf("No. of consonants : %d",cc);}
+%%
+
+int main()
+{
+printf("Enter string : ");
+yylex();
+return 0;
+}
+

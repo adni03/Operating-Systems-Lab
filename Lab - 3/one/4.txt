@@ -1,0 +1,23 @@
+%{
+        #include<stdlib.h>
+        int words=0;
+        int ch=0;
+        int line=0;
+%}
+
+%%
+"\n"    {line++;}
+" "     {words++;}
+[a-zA-Z]        {ch++;}
+%%
+
+int main()
+{
+        printf("Enter sentences : ");
+        yylex();
+        printf("\nNo. of words : %d",words);
+        printf("\nNo. of characters : %d",ch);
+        printf("\nNo. of lines : %d", line);
+        return 0;
+}
+
